@@ -5,13 +5,9 @@ import json
 
 pipeline = boto3.client('codepipeline')
 
-print("getting environment variable")
-print("environment variable: " + os.environ['DISTRIBUTION_ID'])
-dist = os.environ['DISTRIBUTION_ID'] #// get the Distribution ID from the lambda environment variable
-# dist_str = str(dist) //statement to convert the distribution variable into a string
-
 
 def lambda_handler(event, context):
+    dist=event["CodePipeline.job"]["data"]["actionConfiguration"]["configuration"]["UserParameters"]
     client = boto3.client('cloudfront')
     invalidation = client.create_invalidation(
         DistributionId=dist,
