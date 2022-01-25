@@ -12,7 +12,7 @@ The purpose of this function is to be called as required as a standalone functio
 2. Select **Python 3.8** as the runtime
 3. Copy the source code into your function
 4. Create execution role and assign permissions to your cloudfront distribution
-5. Create an **Environment Variable** with a _key_ of DISTRIBUTION_ID and a _value_ of your CloudFront Distribution
+5. Create an User parameters in your Pipeline action with distribution value
 6. Deploy function
 
 
